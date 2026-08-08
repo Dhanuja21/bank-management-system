@@ -4,7 +4,8 @@ while True:
     print("\n===== BANK MANAGER SYSTEM =====")
     print("1. Create Account")
     print("2. Show All Accounts")
-    print("3. Exit")
+    print("3. Deposit Amount")
+    print("4. Exit")
     choice = input("Enter your choice: ")
     if choice == "1":
         name = input("Enter Customer Name: ")
@@ -27,6 +28,15 @@ while True:
                 print("Balance :", accounts[acc_no]["balance"])
                 print()
     elif choice == "3":
+        acc_no = int(input("Enter Account Number: "))
+        if acc_no in accounts:
+            amount = float(input("Enter Deposit Amount: "))
+            accounts[acc_no]["balance"] = accounts[acc_no]["balance"] + amount
+            print("Amount Deposited Successfully")
+            print("Updated Balance:", accounts[acc_no]["balance"])
+        else:
+            print("Account Not Found")
+    elif choice == "4":
         print("Thank You")
         break
     else:
