@@ -1,6 +1,6 @@
-accounts = {}
+from collections import OrderedDict
+accounts= OrderedDict()
 next_id = 1
-
 while True:
     print("\n===== BANK MANAGER SYSTEM =====")
     print("1. Create Account")
